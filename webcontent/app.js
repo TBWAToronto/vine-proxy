@@ -1,18 +1,17 @@
-﻿var express = require("express"),
-   http = require("http"),
-   https = require("https"),
-   fs = require("fs"),
-   querystring = require("querystring");
+﻿/*** Notes ***
+*
+*  Only authenticating with username/email and password for now. No oAuth. 
+*  For testing purposes I have created an empty account using my gmail account. Creds in clear text included here. It's
+*  not the same account that I actually use for Vine which I login with Twitter oAuth.
+*/
 
-var app = express();
-
-app.use(express.static(__dirname + '/public'));
-
-
-// 4. Support SSL
-// 5. Instructions
-// 6. Caveats (no caching, no error checking, no performance optimization, not tested, no oauth, )
-// 7. Documentation
+/*** To-do List ***
+*
+*  Add support for inbound SSL
+*  Instructions
+*  Caveats (no caching, no error checking, no performance optimization, not tested, no oauth, )
+*  Documentation
+*/
 
 /*** Usefull reference links ***
 *
@@ -34,8 +33,14 @@ app.use(express.static(__dirname + '/public'));
 *  curl -d "username=troy.forster@gmail.com&password=$v1ne200" --header "Content-Type: application/x-www-form-urlencoded; charset=utf-8" --header "user-agent: com.vine.iphone/1.0.3 (unknown, iPhone OS 6.1.0, iPhone, Scale/2.000000)"  https://api.vineapp.com/users/authenticate
 */
 
+var express = require("express"),
+   http = require("http"),
+   https = require("https"),
+   fs = require("fs"),
+   querystring = require("querystring");
 
-
+var app = express();
+app.use(express.static(__dirname + '/public'));
 
 var Api = {
    "creds": { "username": "troy.forster@gmail.com", "password": "$v1ne200" },
@@ -96,10 +101,9 @@ var Api = {
       req.write(postData);
       req.end();
    }
-
 }
 
-
+/*** Routes Start Here ***/
 
 app.get("/api/timelines/users/:id", function (req, res) {
    var apiMethod = {
@@ -230,30 +234,6 @@ app.get("/api/posts/:id", function (req, res) {
       res.send(data);
    });
 });
-
-
-
-//app.get("/api/:method", function (req, res) {
-//   var method = req.params.method.toLowerCase();
-//   for (itemProp in Api.methods) {
-//      if (itemProp === method) {
-//         Api.GetIt(Api.methods[method], {}, function (data) {
-//            res.send(data);
-//         });
-//      }
-//   }
-//});
-
-
-// Render a simple test page *** That I haven't modified since Thursday so its not really doing much use at the moment ***
-//app.get("/", function (req, res) {
-//   var index = fs.readFileSync("index.html");
-//   res.writeHead(200, { "Content-Type": "text/html" });
-
-//   res.write(index);
-//   res.end(Api["vine-session-id"]);
-
-//});
 
 app.listen(3000);
 console.log("Listening on port 3000");
