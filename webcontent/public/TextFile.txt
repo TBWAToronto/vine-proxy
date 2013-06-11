@@ -9,7 +9,8 @@ Connection: keep-alive
 User-Agent: vine/1.1 CFNetwork/609.1.4 Darwin/13.0.0
 Pragma: no-cache
 Cache-Control: no-cache
-HTTP/1.1 200 OK
+
+HTTP/1.1 200 OK
 x-amz-id-2: mPAcEYoyG4A2PMP+GPO8yZpOfz6ql+7coizRl3lxYVq1gMJ++Aj+wPyfMeOZDG8c
 x-amz-request-id: F78DB91C51553EC8
 Date: Mon, 20 May 2013 19:39:57 GMT
@@ -40,7 +41,8 @@ Connection: keep-alive
 vine-session-id: 946898040843837440-acd8bc53-7369-4544-b007-8eb59e551866
 User-Agent: com.vine.iphone/1.1 (unknown, iPhone OS 6.1.4, iPhone, Scale/2.000000)
 Pragma: no-cache
-Cache-Control: no-cache
+Cache-Control: no-cache
+
 {"code": "", "data": {"count": 0, "records": [], "nextPage": null, "anchor": 0, "previousPage": null, "size": 20}, "success": true, "error": ""}
 
 https://api.vineapp.com/users/profiles/946898040843837440
@@ -54,7 +56,8 @@ Connection: keep-alive
 vine-session-id: 946898040843837440-acd8bc53-7369-4544-b007-8eb59e551866
 User-Agent: com.vine.iphone/1.1 (unknown, iPhone OS 6.1.4, iPhone, Scale/2.000000)
 Pragma: no-cache
-Cache-Control: no-cache
+Cache-Control: no-cache
+
 {"code": "", "data": {"username": "Troy Forster", "following": 0, "followerCount": 0, "includePromoted": 1, "verified": 0, "description": null, "avatarUrl": "https://s3.amazonaws.com/vines/avatars/default.png", "twitterId": null, "userId": 946898040843837440, "twitterConnected": 0, "likeCount": 0, "facebookConnected": 0, "postCount": 0, "phoneNumber": null, "location": null, "blocking": 0, "followingCount": 0, "explicitContent": 0, "email": "troy.forster@gmail.com", "blocked": 0}, "success": true, "error": ""}
 
 https://api.vineapp.com/users/946898040843837440/pendingNotificationsCount
@@ -129,7 +132,8 @@ Connection: keep-alive
 vine-session-id: 946898040843837440-acd8bc53-7369-4544-b007-8eb59e551866
 User-Agent: com.vine.iphone/1.1 (unknown, iPhone OS 6.1.4, iPhone, Scale/2.000000)
 Pragma: no-cache
-Cache-Control: no-cache
+Cache-Control: no-cache
+
 {"code": "", "data": {"count": 7, "records": [{"tagId": 906538410951577601, "tag": "mountainbike"}, {"tagId": 942234411246862336, "tag": "mountainbikegrips"}, {"tagId": 947959294895353856, "tag": "mountainbikeproblems"}, {"tagId": 939593791470596096, "tag": "mountainbiker"}, {"tagId": 944406306092232704, "tag": "MountainBikerProblems"}, {"tagId": 914314627347914752, "tag": "mountainbikes"}, {"tagId": 943656105714966528, "tag": "MountainBikeWithSteven"}], "nextPage": null, "anchor": 0, "previousPage": null, "size": 20}, "success": true, "error": ""}
 
 https://api.vineapp.com/timelines/tags/lunchtime (from trending)

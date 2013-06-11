@@ -30,20 +30,24 @@
 *  https://vine.co/explore?v=1.1
 *
 *  Testing auth with curl
-*  curl -d "username=troy.forster@gmail.com&password=$v1ne200" --header "Content-Type: application/x-www-form-urlencoded; charset=utf-8" --header "user-agent: com.vine.iphone/1.0.3 (unknown, iPhone OS 6.1.0, iPhone, Scale/2.000000)"  https://api.vineapp.com/users/authenticate
+*  curl -d "username=troy.forster@gmail.com&password=password" --header "Content-Type: application/x-www-form-urlencoded; charset=utf-8" --header "user-agent: com.vine.iphone/1.0.3 (unknown, iPhone OS 6.1.0, iPhone, Scale/2.000000)"  https://api.vineapp.com/users/authenticate
 */
 
 var express = require("express"),
    http = require("http"),
    https = require("https"),
-   fs = require("fs"),
    querystring = require("querystring");
 
 var app = express();
 app.use(express.static(__dirname + '/public'));
 
+      
+function myfunc(a) {
+   return a * 100;
+}
+
 var Api = {
-   "creds": { "username": "troy.forster@gmail.com", "password": "$v1ne200" },
+   "creds": { "username": "troy.forster@gmail.com", "password": "password" },
    "basepath": "api.vineapp.com",
    "vine-session-id": "",
    "vine-user-id": "",
@@ -236,4 +240,4 @@ app.get("/api/posts/:id", function (req, res) {
 });
 
 app.listen(3000);
-console.log("Listening on port 3000");
+console.log("I'm Listening on port 3000");
