@@ -85,9 +85,6 @@ var Api = {
       var req = https.request(options, function (res) {
          console.log("\r\r\r", new Date(), "\r", options, "\rstatus: ", res.statusCode);
          res.setEncoding("utf8");
-         res.header("Access-Control-Allow-Origin", "*");
-         res.header("Access-Control-Allow-Headers", "X-Requested-With");
-
          var responseData = "";
 
          res.on("data", function (data) {
@@ -105,6 +102,11 @@ var Api = {
       });
 
       var postData = querystring.stringify(data);
+
+      // Set CORS headers
+      req.setHeader("Access-Control-Allow-Origin", "*");
+      req.setHeader("Access-Control-Allow-Headers", "X-Requested-With");
+
       req.write(postData);
       req.end();
    }
