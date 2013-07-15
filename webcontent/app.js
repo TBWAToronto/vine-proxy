@@ -39,6 +39,14 @@ var express = require("express"),
    querystring = require("querystring");
 
 var app = express();
+//CORS middleware
+var allowCrossDomain = function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+}
+
+app.use(allowCrossDomain);
 app.use(express.static(__dirname + '/public'));
 
       
@@ -104,8 +112,8 @@ var Api = {
       var postData = querystring.stringify(data);
 
       // Set CORS headers
-      req.setHeader("Access-Control-Allow-Origin", "*");
-      req.setHeader("Access-Control-Allow-Headers", "X-Requested-With");
+      //req.setHeader("Access-Control-Allow-Origin", "*");
+      //req.setHeader("Access-Control-Allow-Headers", "X-Requested-With");
 
       req.write(postData);
       req.end();
