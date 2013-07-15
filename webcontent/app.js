@@ -111,10 +111,6 @@ var Api = {
 
       var postData = querystring.stringify(data);
 
-      // Set CORS headers
-      //req.setHeader("Access-Control-Allow-Origin", "*");
-      //req.setHeader("Access-Control-Allow-Headers", "X-Requested-With");
-
       req.write(postData);
       req.end();
    }
